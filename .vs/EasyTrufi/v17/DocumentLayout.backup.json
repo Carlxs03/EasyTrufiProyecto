@@ -1,0 +1,504 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.api\\controllers\\nfccardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|solutionrelative:easytrufi.api\\controllers\\nfccardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.infraestructure\\dtos\\nfccarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|solutionrelative:easytrufi.infraestructure\\dtos\\nfccarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|solutionrelative:easytrufi.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|solutionrelative:easytrufi.api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|solutionrelative:easytrufi.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.infraestructure\\repositories\\nfccardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|solutionrelative:easytrufi.infraestructure\\repositories\\nfccardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.infraestructure\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|solutionrelative:easytrufi.infraestructure\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.core\\interfaces\\infccardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|solutionrelative:easytrufi.core\\interfaces\\infccardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.core\\interfaces\\infccardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|solutionrelative:easytrufi.core\\interfaces\\infccardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.core\\services\\nfccardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|solutionrelative:easytrufi.core\\services\\nfccardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|solutionrelative:easytrufi.core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.core\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|solutionrelative:easytrufi.core\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.infraestructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|solutionrelative:easytrufi.infraestructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.infraestructure\\validators\\validationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|solutionrelative:easytrufi.infraestructure\\validators\\validationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.core\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|solutionrelative:easytrufi.core\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.core\\entities\\nfccard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|solutionrelative:easytrufi.core\\entities\\nfccard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.api\\responses\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|solutionrelative:easytrufi.api\\responses\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.infraestructure\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|solutionrelative:easytrufi.infraestructure\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.infraestructure\\validators\\userdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|solutionrelative:easytrufi.infraestructure\\validators\\userdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.infraestructure\\dtos\\userdto_getall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|solutionrelative:easytrufi.infraestructure\\dtos\\userdto_getall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.infraestructure\\filters\\validationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|solutionrelative:easytrufi.infraestructure\\filters\\validationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.infraestructure\\easytrufi.infraestructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|solutionrelative:easytrufi.infraestructure\\easytrufi.infraestructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|solutionrelative:easytrufi.core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|solutionrelative:easytrufi.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.infraestructure\\data\\easytruficontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|solutionrelative:easytrufi.infraestructure\\data\\easytruficontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.core\\easytrufi.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|solutionrelative:easytrufi.core\\easytrufi.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.api\\easytrufi.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6FDE21F0-B604-4F0E-B026-203067182458}|EasyTrufi.Api\\EasyTrufi.Api.csproj|solutionrelative:easytrufi.api\\easytrufi.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.infraestructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7532729-7815-4AD5-A0E5-DC4AC73AFC47}|EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj|solutionrelative:easytrufi.infraestructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|d:\\carlos\\universidad cat\u00F3lica boliviana\\2025\\tecnolog\u00EDa web i\\easytrufi_proyecto\\easytrufi\\easytrufi.core\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D902AC48-9FF7-4B53-A86B-53C50A48AB07}|EasyTrufi.Core\\EasyTrufi.Core.csproj|solutionrelative:easytrufi.core\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NfcCardController.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\Controllers\\NfcCardController.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Api\\Controllers\\NfcCardController.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\Controllers\\NfcCardController.cs",
+              "RelativeToolTip": "EasyTrufi.Api\\Controllers\\NfcCardController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAgwEAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T16:26:07.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Api\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "EasyTrufi.Api\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T16:20:33.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NfcCardRepository.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Repositories\\NfcCardRepository.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Infraestructure\\Repositories\\NfcCardRepository.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Repositories\\NfcCardRepository.cs",
+              "RelativeToolTip": "EasyTrufi.Infraestructure\\Repositories\\NfcCardRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABEAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T15:48:58.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\Program.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Api\\Program.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\Program.cs",
+              "RelativeToolTip": "EasyTrufi.Api\\Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwB8AAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T17:53:57.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Mappings\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Infraestructure\\Mappings\\MappingProfile.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Mappings\\MappingProfile.cs",
+              "RelativeToolTip": "EasyTrufi.Infraestructure\\Mappings\\MappingProfile.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA2wBgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T05:05:30.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Api\\Controllers\\UsersController.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "EasyTrufi.Api\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAGUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T18:01:14.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NfcCardDTO.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\DTOs\\NfcCardDTO.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Infraestructure\\DTOs\\NfcCardDTO.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\DTOs\\NfcCardDTO.cs",
+              "RelativeToolTip": "EasyTrufi.Infraestructure\\DTOs\\NfcCardDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T15:45:29.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "INfcCardRepository.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Interfaces\\INfcCardRepository.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Core\\Interfaces\\INfcCardRepository.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Interfaces\\INfcCardRepository.cs",
+              "RelativeToolTip": "EasyTrufi.Core\\Interfaces\\INfcCardRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T15:47:19.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "INfcCardService.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Interfaces\\INfcCardService.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Core\\Interfaces\\INfcCardService.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Interfaces\\INfcCardService.cs",
+              "RelativeToolTip": "EasyTrufi.Core\\Interfaces\\INfcCardService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T15:47:44.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NfcCardService.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Services\\NfcCardService.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Core\\Services\\NfcCardService.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Services\\NfcCardService.cs",
+              "RelativeToolTip": "EasyTrufi.Core\\Services\\NfcCardService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwCsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T15:48:23.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Core\\Services\\UserService.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Services\\UserService.cs",
+              "RelativeToolTip": "EasyTrufi.Core\\Services\\UserService.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAkwBgAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T05:47:06.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Core\\Interfaces\\IUserService.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "EasyTrufi.Core\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAArwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T19:16:25.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Infraestructure\\Repositories\\UserRepository.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "EasyTrufi.Infraestructure\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAuwBMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T19:24:02.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ValidationService.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Validators\\ValidationService.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Infraestructure\\Validators\\ValidationService.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Validators\\ValidationService.cs",
+              "RelativeToolTip": "EasyTrufi.Infraestructure\\Validators\\ValidationService.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAwwC8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T02:16:42.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Core\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "EasyTrufi.Core\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T19:06:30.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UserDTO_GetAll.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\DTOs\\UserDTO_GetAll.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Infraestructure\\DTOs\\UserDTO_GetAll.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\DTOs\\UserDTO_GetAll.cs",
+              "RelativeToolTip": "EasyTrufi.Infraestructure\\DTOs\\UserDTO_GetAll.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T15:23:43.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\DTOs\\UserDTO.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Infraestructure\\DTOs\\UserDTO.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\DTOs\\UserDTO.cs",
+              "RelativeToolTip": "EasyTrufi.Infraestructure\\DTOs\\UserDTO.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T04:53:05.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "NfcCard.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Entities\\NfcCard.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Core\\Entities\\NfcCard.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Entities\\NfcCard.cs",
+              "RelativeToolTip": "EasyTrufi.Core\\Entities\\NfcCard.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA7wAcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T15:41:43.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ApiResponse.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\Responses\\ApiResponse.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Api\\Responses\\ApiResponse.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\Responses\\ApiResponse.cs",
+              "RelativeToolTip": "EasyTrufi.Api\\Responses\\ApiResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T06:19:15.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UserDtoValidator.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Validators\\UserDtoValidator.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Infraestructure\\Validators\\UserDtoValidator.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Validators\\UserDtoValidator.cs",
+              "RelativeToolTip": "EasyTrufi.Infraestructure\\Validators\\UserDtoValidator.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAADYAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T23:23:34.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "EasyTrufiContext.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Data\\EasyTrufiContext.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Infraestructure\\Data\\EasyTrufiContext.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Data\\EasyTrufiContext.cs",
+              "RelativeToolTip": "EasyTrufi.Infraestructure\\Data\\EasyTrufiContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T17:41:28.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "EasyTrufi.Api\\appsettings.json",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\appsettings.json",
+              "RelativeToolTip": "EasyTrufi.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-07T17:29:40.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ValidationFilter.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Filters\\ValidationFilter.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Infraestructure\\Filters\\ValidationFilter.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Filters\\ValidationFilter.cs",
+              "RelativeToolTip": "EasyTrufi.Infraestructure\\Filters\\ValidationFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T02:18:20.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Core\\Entities\\User.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Entities\\User.cs",
+              "RelativeToolTip": "EasyTrufi.Core\\Entities\\User.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T18:56:35.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "EasyTrufi.Infraestructure.csproj",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj",
+              "RelativeDocumentMoniker": "EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj",
+              "RelativeToolTip": "EasyTrufi.Infraestructure\\EasyTrufi.Infraestructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-03T21:48:06.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "EasyTrufi.Core.csproj",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\EasyTrufi.Core.csproj",
+              "RelativeDocumentMoniker": "EasyTrufi.Core\\EasyTrufi.Core.csproj",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\EasyTrufi.Core.csproj",
+              "RelativeToolTip": "EasyTrufi.Core\\EasyTrufi.Core.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-07T17:45:12.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "EasyTrufi.Api.csproj",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\EasyTrufi.Api.csproj",
+              "RelativeDocumentMoniker": "EasyTrufi.Api\\EasyTrufi.Api.csproj",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Api\\EasyTrufi.Api.csproj",
+              "RelativeToolTip": "EasyTrufi.Api\\EasyTrufi.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-03T22:09:39.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Class1.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Infraestructure\\Class1.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Infraestructure\\Class1.cs",
+              "RelativeToolTip": "EasyTrufi.Infraestructure\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T21:41:38.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Class1.cs",
+              "RelativeDocumentMoniker": "EasyTrufi.Core\\Class1.cs",
+              "ToolTip": "D:\\CARLOS\\Universidad Cat\u00F3lica Boliviana\\2025\\Tecnolog\u00EDa Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\Class1.cs",
+              "RelativeToolTip": "EasyTrufi.Core\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T21:30:54.223Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
