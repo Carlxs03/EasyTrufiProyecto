@@ -21,5 +21,8 @@ namespace EasyTrufi.Core.Interfaces
         Task<bool> CedulaExists(string id);
 
         Task<bool> EmailExists(string email);
+
+        Task <IEnumerable<User>> GetAllUsersDapperAsync(int limit = 10);
+
     }
 }

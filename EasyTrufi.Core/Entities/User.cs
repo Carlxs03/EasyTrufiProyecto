@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace EasyTrufi.Core.Entities;
 
-public partial class User
+public partial class User : BaseEntity
 {
-    public long Id { get; set; }
+    //public long Id { get; set; }
 
     public string Cedula { get; set; } = null!;
 

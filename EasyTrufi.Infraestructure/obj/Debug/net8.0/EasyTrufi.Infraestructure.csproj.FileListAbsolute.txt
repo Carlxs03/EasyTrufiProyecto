@@ -15,3 +15,4 @@ D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proye
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Infraestructure\obj\Debug\net8.0\EasyTrufi.Infraestructure.pdb
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Infraestructure\obj\Debug\net8.0\EasyTrufi.Infraestructure.genruntimeconfig.cache
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Infraestructure\obj\Debug\net8.0\ref\EasyTrufi.Infraestructure.dll
+D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Infraestructure\obj\Debug\net8.0\EasyTrufi.Infraestructure.sourcelink.json

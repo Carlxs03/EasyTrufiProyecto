@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace EasyTrufi.Core.Entities;
 
-public partial class Validator
+public partial class Validator : BaseEntity
 {
-    public long Id { get; set; }
+    //public long Id { get; set; }
 
     public string ValidatorCode { get; set; } = null!;
 

@@ -1,11 +1,15 @@
 ﻿using AutoMapper;
 using EasyTrufi.Api.Responses;
+using EasyTrufi.Core.CustomEntities;
 using EasyTrufi.Core.Entities;
+using EasyTrufi.Core.Enum;
 using EasyTrufi.Core.Interfaces;
+using EasyTrufi.Core.QueryFilters;
+using EasyTrufi.Core.QueryFilters;
 using EasyTrufi.Infraestructure.DTOs;
 using EasyTrufi.Infraestructure.Validators;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.Extensions.Hosting;
 
 namespace EasyTrufi.Api.Controllers
 {
@@ -38,14 +42,41 @@ namespace EasyTrufi.Api.Controllers
 
         #region Dto Mapper
         [HttpGet()]
-        public async Task<IActionResult> GetUsersDtoMapper()
+        public async Task<IActionResult> GetUsersDtoMapper(
+            [FromQuery]UserQueryFilter filters )
         {
-            var users = await _userService.GetAllUsersAsync();
-            var usersDto = _mapper.Map<IEnumerable<UserDTO_GetAll>>(users);
+            try
+            {
+                var users = await _userService.GetAllUsersAsync(filters);
 
-            var response = new ApiResponse<IEnumerable<UserDTO_GetAll>>(usersDto);
+                var usersDto = _mapper.Map<IEnumerable<UserDTO_GetAll>>(users.Pagination);
 
-            return Ok(response);
+                var pagination = new Pagination
+                {
+                    TotalCount = users.Pagination.TotalCount,
+                    PageSize = users.Pagination.PageSize,
+                    CurrentPage = users.Pagination.CurrentPage,
+                    TotalPages = users.Pagination.TotalPages,
+                    HasNextPage = users.Pagination.HasNextPage,
+                    HasPreviousPage = users.Pagination.HasPreviousPage
+                };
+                var response = new ApiResponse<IEnumerable<UserDTO_GetAll>>(usersDto)
+                {
+                    Pagination = pagination,
+                    Messages = users.Messages
+                };
+
+                return StatusCode((int)users.StatusCode, response);
+            }
+            catch (Exception err)
+            {
+                var responsePost = new ResponseData()
+                {
+                    Messages = new Message[] { new() { Type = TypeMessage.error.ToString(), Description = err.Message } },
+                };
+                return StatusCode(500, responsePost);
+            }
+
         }
 
 
@@ -91,8 +122,8 @@ namespace EasyTrufi.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUserDtoMapper(int id)
         {
-            var post = await _userService.GetUserByIdAsync(id);
-            if (post == null)
+            var user = await _userService.GetUserByIdAsync(id);
+            if (user == null)
                 return NotFound("User no encontrado");
 
             await _userService.DeleteUserAsync(id);

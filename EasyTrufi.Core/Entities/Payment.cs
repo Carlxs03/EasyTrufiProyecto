@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace EasyTrufi.Core.Entities;
 
-public partial class Payment
+public partial class Payment : BaseEntity
 {
-    public long Id { get; set; }
+    //public long Id { get; set; }
 
     public long NfcCardId { get; set; }
 

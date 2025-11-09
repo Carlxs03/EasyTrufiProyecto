@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EasyTrufi.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36e57516ab8a257777fa8f8672c37aab10fafc24")]
 [assembly: System.Reflection.AssemblyProductAttribute("EasyTrufi.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EasyTrufi.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

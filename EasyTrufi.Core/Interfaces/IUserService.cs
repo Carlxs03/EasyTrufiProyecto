@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using EasyTrufi.Core.CustomEntities;
 using EasyTrufi.Core.Entities;
+using EasyTrufi.Core.QueryFilters;
 
 namespace EasyTrufi.Core.Interfaces
 {
@@ -19,6 +20,9 @@ namespace EasyTrufi.Core.Interfaces
         Task UpdateUserAsync (User user);
 
         Task DeleteUserAsync (int id);
+
+        Task<ResponseData> GetAllUsersAsync(UserQueryFilter filters);
+
 
     }
 }

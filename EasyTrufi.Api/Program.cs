@@ -7,6 +7,7 @@ using EasyTrufi.Infraestructure.Mappings;
 using EasyTrufi.Infraestructure.Repositories;
 using EasyTrufi.Infraestructure.Validators;
 using FluentValidation;
+using Microsoft.AspNetCore.Connections;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -23,16 +24,36 @@ namespace EasyTrufi.Api
             builder.Services.AddDbContext<EasyTrufiContext>(options => options.UseSqlServer(connectionString));
             #endregion
 
-            // Registrar repo
-            builder.Services.AddTransient<IUserRepository, UserRepository>();
+            // Registrar repo Inyectar Dependencias
+            //builder.Services.AddTransient<IUserRepository, UserRepository>();
 
             builder.Services.AddTransient<IUserService, UserService>();
 
             builder.Services.AddTransient<INfcCardService, NfcCardService>();
-            builder.Services.AddTransient<INfcCardRepository, NfcCardRepository>();
+            builder.Services.AddTransient<IPaymentService, IPaymentService>();
+            //builder.Services.AddTransient<INfcCardRepository, NfcCardRepository>();
+            builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
 
             builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+            // Registrar IDbConnectionFactory, UnitOfWork, DapperContext y repos
+            builder.Services.AddSingleton<IDbConnectionFactory, DbConnectionFactory>();
+            builder.Services.AddScoped<IDapperContext, DapperContext>();
+
+
+            // Add services to the container.
+            builder.Services.AddControllers(options =>
+            {
+                options.Filters.Add<GlobalExceptionFilter>();
+            }).AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            }).ConfigureApiBehaviorOptions(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
 
             //Validaciones
             builder.Services.AddControllers(options =>
@@ -45,7 +66,7 @@ namespace EasyTrufi.Api
 
             // Services
             builder.Services.AddScoped<IValidationService, ValidationService>();
-
+           
 
 
 
