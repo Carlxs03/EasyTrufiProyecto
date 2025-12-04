@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="EasyTrufi-api" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\CARLOS\\Universidad\ Católica\ Boliviana\\2025\\Tecnología\ Web\ I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi\.Api\\obj\\Release\\net8\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

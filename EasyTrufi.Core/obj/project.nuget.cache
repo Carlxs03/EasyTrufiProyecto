@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ub2iJEPiWqI=",
+  "dgSpecHash": "LSUhoXKmfM0=",
   "success": true,
   "projectFilePath": "D:\\CARLOS\\Universidad Católica Boliviana\\2025\\Tecnología Web I\\EasyTrufi_Proyecto\\EasyTrufi\\EasyTrufi.Core\\EasyTrufi.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Kelli\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "C:\\Users\\Kelli\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.6.2\\swashbuckle.aspnetcore.annotations.6.6.2.nupkg.sha512",
+    "C:\\Users\\Kelli\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
+    "C:\\Users\\Kelli\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512"
+  ],
   "logs": []
 }

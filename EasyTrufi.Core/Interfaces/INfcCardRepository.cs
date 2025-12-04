@@ -10,12 +10,12 @@ namespace EasyTrufi.Core.Interfaces
     public interface INfcCardRepository
     {
         Task<IEnumerable<NfcCard>> GetAllCardsAsync();
-        Task<NfcCard> GetCardByIdAsync(int id);
+        Task<NfcCard> GetCardByIdAsync(long id);
         Task InsertCardAsync(NfcCard card);
 
         Task UpdateCardAsync(NfcCard card);
 
-        Task DeleteCardAsync(int id);
+        Task DeleteCardAsync(long id);
 
     }
 }

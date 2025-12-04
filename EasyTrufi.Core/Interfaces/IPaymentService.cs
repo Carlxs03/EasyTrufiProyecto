@@ -13,7 +13,7 @@ namespace EasyTrufi.Core.Interfaces
     {
         Task<IEnumerable<Payment>> GetAllPaymentsAsync();
 
-        Task<Payment> GetPaymentByIdAsync(int id);
+        Task<Payment> GetPaymentByIdAsync(long id);
 
         Task InsertPaymentAsync(Payment payment);
 

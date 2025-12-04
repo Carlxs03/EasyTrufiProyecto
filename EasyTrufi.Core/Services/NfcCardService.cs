@@ -11,37 +11,40 @@ namespace EasyTrufi.Core.Services
     public class NfcCardService : INfcCardService
     {
         public readonly INfcCardRepository _NfcCardRepository;
+        public readonly IUnitOfWork _unitOfWork;
         public NfcCardService(
-            INfcCardRepository NfcCardRepository
+            //INfcCardRepository NfcCardRepository,
+            IUnitOfWork unitOfWork
             )
         {
-            _NfcCardRepository = NfcCardRepository;
+            //_NfcCardRepository = NfcCardRepository;
+            _unitOfWork = unitOfWork;
         }
 
 
         public async Task<IEnumerable<NfcCard>> GetAllCardsAsync()
         {
-            return await _NfcCardRepository.GetAllCardsAsync();
+            return await _unitOfWork.nfcCardRepository.GetAll();
         }
 
-        public async Task<NfcCard> GetCardByIdAsync(int id)
+        public async Task<NfcCard> GetCardByIdAsync(long id)
         {
-            return await _NfcCardRepository.GetCardByIdAsync(id);
+            return await _unitOfWork.nfcCardRepository.GetById(id);
         }
         public async Task InsertCardAsync(NfcCard card)
         {
-            await _NfcCardRepository.InsertCardAsync(card);
+            await _unitOfWork.nfcCardRepository.Add(card);
         }
 
         public async Task UpdateCardAsync(NfcCard card)
         {
-            await _NfcCardRepository.UpdateCardAsync(card);
+            await _unitOfWork.nfcCardRepository.Update(card);
         }
 
 
-        public async Task DeleteCardAsync(int id)
+        public async Task DeleteCardAsync(long id)
         {
-            await _NfcCardRepository.DeleteCardAsync(id);
+            await _unitOfWork.nfcCardRepository.Delete(id);
         }
 
     }

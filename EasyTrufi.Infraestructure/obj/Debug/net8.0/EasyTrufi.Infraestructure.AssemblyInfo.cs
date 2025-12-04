@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EasyTrufi.Infraestructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36e57516ab8a257777fa8f8672c37aab10fafc24")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5679790d18a8bf46b3d6a590302a51f3906f2fc")]
 [assembly: System.Reflection.AssemblyProductAttribute("EasyTrufi.Infraestructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EasyTrufi.Infraestructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

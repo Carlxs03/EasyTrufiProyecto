@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace EasyTrufi.Core.Entities;
 
+/// <summary>
+/// Representa una transacción de recarga de saldo (crédito) a una tarjeta NFC.
+/// </summary>
 public partial class Topup : BaseEntity
 {
     //public long Id { get; set; }

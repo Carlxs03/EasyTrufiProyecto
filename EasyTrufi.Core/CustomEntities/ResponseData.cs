@@ -1,19 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Swashbuckle.AspNetCore.Annotations;
+using System;
 using System.Net;
-using System.Text;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
-namespace EasyTrufi.Core.CustomEntities
+namespace EasyTrufi.Core.CustomEntities;
+
+/// <summary>
+/// Representa una respuesta estándar utilizada en el sistema EasyTrufi, que incluye datos de paginación, mensajes y un código de estado HTTP.
+/// </summary>
+public class ResponseData
 {
-    public class ResponseData
-    {
-        public PagedList<object> Pagination { get; set; }
-        public Message[] Messages { get; set; }
-        [JsonIgnore]
-        public HttpStatusCode StatusCode { get; set; }
+    /// <summary>
+    /// Información de paginación asociada a la respuesta.
+    /// </summary>
+    [SwaggerSchema("Información de paginación asociada a la respuesta", Nullable = true)]
+    public PagedList<object> Pagination { get; set; }
 
-    }
+    /// <summary>
+    /// Lista de mensajes relacionados con la respuesta.
+    /// </summary>
+    [SwaggerSchema("Lista de mensajes relacionados con la respuesta", Nullable = false)]
+    public Message[] Messages { get; set; }
+
+    /// <summary>
+    /// Código de estado HTTP asociado a la respuesta.
+    /// </summary>
+    [JsonIgnore]
+    [SwaggerSchema("Código de estado HTTP asociado a la respuesta", Nullable = false)]
+    public HttpStatusCode StatusCode { get; set; }
 }

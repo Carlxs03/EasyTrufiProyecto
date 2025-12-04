@@ -9,6 +9,7 @@ using EasyTrufi.Infraestructure.DTOs;
 using EasyTrufi.Infraestructure.Validators;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace EasyTrufi.Api.Controllers
 {
@@ -32,7 +33,17 @@ namespace EasyTrufi.Api.Controllers
         }
 
         #region Dto Mapper
+        /// <summary>
+        /// Recupera una lista paginada de pagos realizados en el sistema.
+        /// </summary>
+        /// <param name="filters">Filtros aplicados para la búsqueda de pagos, como paginación y criterios específicos.</param>
+        /// <returns>Un <see cref="IActionResult"/> que contiene un <see cref="ApiResponse{T}"/> con una colección de objetos <see cref="PaymentDTO"/> y detalles de paginación.</returns>
+        /// <response code="200">Retorna la lista de pagos</response>
+        /// <response code="500">Error interno del servidor</response>
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ApiResponse<IEnumerable<PaymentDTO>>))]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         [HttpGet()]
+
         public async Task<IActionResult> GetPaymentsDtoMapper(
             [FromQuery] PaymentQueryFilter filters)
         {
@@ -71,8 +82,18 @@ namespace EasyTrufi.Api.Controllers
         }
 
 
+        /// <summary>
+        /// Recupera un pago específico por su identificador único.
+        /// </summary>
+        /// <param name="id">El identificador único del pago.</param>
+        /// <returns>Un <see cref="IActionResult"/> que contiene un <see cref="ApiResponse{T}"/> con los datos del pago.</returns>
+        /// <response code="200">Retorna el pago solicitado</response>
+        /// <response code="404">Pago no encontrado</response>
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ApiResponse<PaymentDTO>))]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetPaymentDtoMapperId(int id)
+
+        public async Task<IActionResult> GetPaymentDtoMapperId(long id)
         {
             var payment = await _paymentService.GetPaymentByIdAsync(id);
             var paymentDTO = _mapper.Map<PaymentDTO>(payment);
@@ -82,7 +103,17 @@ namespace EasyTrufi.Api.Controllers
             return Ok(response);
         }
 
+        /// <summary>
+        /// Inserta un nuevo pago en el sistema.
+        /// </summary>
+        /// <param name="paymentDTO">El objeto DTO que contiene los datos del pago a insertar.</param>
+        /// <returns>Un <see cref="IActionResult"/> que contiene un <see cref="ApiResponse{T}"/> con los datos del pago creado.</returns>
+        /// <response code="200">Pago creado exitosamente</response>
+        /// <response code="400">Datos inválidos para la creación del pago</response>
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ApiResponse<Payment>))]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [HttpPost()]
+
         public async Task<IActionResult> InsertPaymentDtoMapper([FromBody] PaymentDTO paymentDTO)
         {
             var payment = _mapper.Map<Payment>(paymentDTO);
@@ -93,7 +124,18 @@ namespace EasyTrufi.Api.Controllers
             return Ok(response);
         }
 
+        /// <summary>
+        /// Actualiza los datos de un pago existente.
+        /// </summary>
+        /// <param name="id">El identificador único del pago a actualizar.</param>
+        /// <param name="paymentDTO">El objeto DTO que contiene los nuevos datos del pago.</param>
+        /// <returns>Un <see cref="IActionResult"/> que contiene un <see cref="ApiResponse{T}"/> con los datos del pago actualizado.</returns>
+        /// <response code="200">Pago actualizado exitosamente</response>
+        /// <response code="404">Pago no encontrado</response>
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ApiResponse<Payment>))]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [HttpPut("{id}")]
+
         public async Task<IActionResult> UpdatePaymentDtoMapper(int id,
             [FromBody] PaymentDTO paymentDTO)
         {
@@ -110,7 +152,18 @@ namespace EasyTrufi.Api.Controllers
             return Ok(response);
         }
 
+
+        /// <summary>
+        /// Elimina un pago del sistema.
+        /// </summary>
+        /// <param name="id">El identificador único del pago a eliminar.</param>
+        /// <returns>Un <see cref="IActionResult"/> que indica el resultado de la operación.</returns>
+        /// <response code="204">Pago eliminado exitosamente</response>
+        /// <response code="404">Pago no encontrado</response>
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [HttpDelete("{id}")]
+
         public async Task<IActionResult> DeletePaymentDtoMapper(int id)
         {
             var payment = await _paymentService.GetPaymentByIdAsync(id);

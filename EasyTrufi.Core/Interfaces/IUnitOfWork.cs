@@ -23,6 +23,8 @@ namespace EasyTrufi.Core.Interfaces
 
         IBaseRepository<Validator> validatorRepository { get; }
 
+        ISecurityRepository SecurityRepository { get; }
+
         void SaveChanges();
         Task SaveChangesAsync();
 

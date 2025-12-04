@@ -25,7 +25,7 @@ namespace EasyTrufi.Infraestructure.Repositories
             return await _entities.ToListAsync();
         }
 
-        public async Task<T> GetById(int id)
+        public async Task<T> GetById(long id)
         {
             return await _entities.FindAsync(id);
         }
@@ -42,7 +42,7 @@ namespace EasyTrufi.Infraestructure.Repositories
             //await _context.SaveChangesAsync();
         }
 
-        public async Task Delete(int id)
+        public async Task Delete(long id)
         {
             T entity = await GetById(id);
             _entities.Remove(entity);

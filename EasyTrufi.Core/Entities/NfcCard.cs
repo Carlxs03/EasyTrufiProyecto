@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Swashbuckle.AspNetCore.Annotations;
+using System;
 using System.Collections.Generic;
 
 namespace EasyTrufi.Core.Entities;
 
+/// <summary>
+/// Representa una tarjeta NFC utilizada en el sistema EasyTrufi.
+/// </summary>
 public partial class NfcCard : BaseEntity
 {
     //public long Id { get; set; }

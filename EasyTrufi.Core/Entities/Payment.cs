@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Swashbuckle.AspNetCore.Annotations; // Necesario para [SwaggerSchema]
 
 namespace EasyTrufi.Core.Entities;
 
+/// <summary>
+/// Representa una transacción de pago de pasaje (débito) realizada en un transporte.
+/// </summary>
 public partial class Payment : BaseEntity
 {
     //public long Id { get; set; }

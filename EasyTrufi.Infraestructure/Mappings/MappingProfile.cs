@@ -1,12 +1,12 @@
-﻿using System;
+﻿using AutoMapper;
+using EasyTrufi.Core.Entities;
+using EasyTrufi.Infraestructure.Data;
+using EasyTrufi.Infraestructure.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using AutoMapper;
-using EasyTrufi.Core.Entities;
-using EasyTrufi.Infraestructure.DTOs;
 
 namespace EasyTrufi.Infraestructure.Mappings
 {
@@ -23,6 +23,14 @@ namespace EasyTrufi.Infraestructure.Mappings
 
             CreateMap<NfcCard, NfcCardDTO>();
             CreateMap<NfcCardDTO, NfcCard>();
+
+            CreateMap<Security, SecurityDTO>().ReverseMap();
+
+            CreateMap<Validator, ValidatorDTO>();
+            CreateMap<ValidatorDTO, Validator>();
+
+            CreateMap<Topup, TopupDTO>();
+            CreateMap<TopupDTO, Topup>();
 
 
         }

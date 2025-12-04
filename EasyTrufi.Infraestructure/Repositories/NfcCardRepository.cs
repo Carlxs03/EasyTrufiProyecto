@@ -26,7 +26,7 @@ namespace EasyTrufi.Infraestructure.Repositories
             return cards;
         }
 
-        public async Task<NfcCard> GetCardByIdAsync(int id)
+        public async Task<NfcCard> GetCardByIdAsync(long id)
         {
             var card = await _context.NfcCards.FirstOrDefaultAsync(x=>x.Id == id);
             return card;
@@ -44,7 +44,7 @@ namespace EasyTrufi.Infraestructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteCardAsync(int id)
+        public async Task DeleteCardAsync(long id)
         {
             NfcCard card = await GetCardByIdAsync(id);
             _context.NfcCards.Remove(card);

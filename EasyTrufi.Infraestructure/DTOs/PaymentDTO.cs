@@ -24,5 +24,8 @@ namespace EasyTrufi.Infraestructure.DTOs
         //public virtual User? User { get; set; }
 
         //public virtual Validator? Validator { get; set; }
+
+
+
     }
 }

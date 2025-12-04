@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Swashbuckle.AspNetCore.Annotations;
+using System;
 using System.Collections.Generic;
 
 namespace EasyTrufi.Core.Entities;
 
+/// <summary>
+/// Representa un conductor en el sistema EasyTrufi.
+/// </summary>
 public partial class Driver : BaseEntity
 {
     //public long Id { get; set; }

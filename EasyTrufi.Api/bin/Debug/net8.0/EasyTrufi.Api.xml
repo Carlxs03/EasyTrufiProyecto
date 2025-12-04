@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EasyTrufi.Api</name>
+    </assembly>
+    <members>
+        <member name="M:EasyTrufi.Api.Controllers.NfcCardController.GetCardsDtoMapper">
+            <summary>
+            Recupera una lista de todas las tarjetas NFC registradas en el sistema.
+            </summary>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que contiene un <see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/> con una colección de objetos <see cref="T:EasyTrufi.Infraestructure.DTOs.NfcCardDTO"/>.</returns>
+            <response code="200">Retorna la lista de tarjetas NFC</response>
+            <response code="500">Error interno del servidor</response>
+            
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.NfcCardController.GetCardsDtoMapperId(System.Int32)">
+            <summary>
+            Recupera una tarjeta NFC específica por su identificador único.
+            </summary>
+            <param name="id">El identificador único de la tarjeta NFC.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que contiene un <see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/> con los datos de la tarjeta NFC.</returns>
+            <response code="200">Retorna la tarjeta NFC solicitada</response>
+            <response code="404">Tarjeta NFC no encontrada</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.NfcCardController.InsertNfcCardDtoMapper(EasyTrufi.Infraestructure.DTOs.NfcCardDTO)">
+            <summary>
+            Inserta una nueva tarjeta NFC en el sistema.
+            </summary>
+            <param name="cardDTO">El objeto DTO que contiene los datos de la tarjeta NFC a insertar.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que contiene un <see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/> con los datos de la tarjeta NFC creada.</returns>
+            <response code="200">Tarjeta NFC creada exitosamente</response>
+            <response code="400">Datos inválidos para la creación de la tarjeta NFC</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.NfcCardController.UpdateCardDtoMapper(System.Int32,EasyTrufi.Infraestructure.DTOs.NfcCardDTO)">
+            <summary>
+            Actualiza los datos de una tarjeta NFC existente.
+            </summary>
+            <param name="id">El identificador único de la tarjeta NFC a actualizar.</param>
+            <param name="cardDTO">El objeto DTO que contiene los nuevos datos de la tarjeta NFC.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que contiene un <see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/> con los datos de la tarjeta NFC actualizada.</returns>
+            <response code="200">Tarjeta NFC actualizada exitosamente</response>
+            <response code="404">Tarjeta NFC no encontrada</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.NfcCardController.DeleteCardDtoMapper(System.Int32)">
+            <summary>
+            Elimina una tarjeta NFC del sistema.
+            </summary>
+            <param name="id">El identificador único de la tarjeta NFC a eliminar.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que indica el resultado de la operación.</returns>
+            <response code="204">Tarjeta NFC eliminada exitosamente</response>
+            <response code="404">Tarjeta NFC no encontrada</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.PaymentController.GetPaymentsDtoMapper(EasyTrufi.Core.QueryFilters.PaymentQueryFilter)">
+            <summary>
+            Recupera una lista paginada de pagos realizados en el sistema.
+            </summary>
+            <param name="filters">Filtros aplicados para la búsqueda de pagos, como paginación y criterios específicos.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que contiene un <see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/> con una colección de objetos <see cref="T:EasyTrufi.Infraestructure.DTOs.PaymentDTO"/> y detalles de paginación.</returns>
+            <response code="200">Retorna la lista de pagos</response>
+            <response code="500">Error interno del servidor</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.PaymentController.GetPaymentDtoMapperId(System.Int64)">
+            <summary>
+            Recupera un pago específico por su identificador único.
+            </summary>
+            <param name="id">El identificador único del pago.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que contiene un <see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/> con los datos del pago.</returns>
+            <response code="200">Retorna el pago solicitado</response>
+            <response code="404">Pago no encontrado</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.PaymentController.InsertPaymentDtoMapper(EasyTrufi.Infraestructure.DTOs.PaymentDTO)">
+            <summary>
+            Inserta un nuevo pago en el sistema.
+            </summary>
+            <param name="paymentDTO">El objeto DTO que contiene los datos del pago a insertar.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que contiene un <see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/> con los datos del pago creado.</returns>
+            <response code="200">Pago creado exitosamente</response>
+            <response code="400">Datos inválidos para la creación del pago</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.PaymentController.UpdatePaymentDtoMapper(System.Int32,EasyTrufi.Infraestructure.DTOs.PaymentDTO)">
+            <summary>
+            Actualiza los datos de un pago existente.
+            </summary>
+            <param name="id">El identificador único del pago a actualizar.</param>
+            <param name="paymentDTO">El objeto DTO que contiene los nuevos datos del pago.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que contiene un <see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/> con los datos del pago actualizado.</returns>
+            <response code="200">Pago actualizado exitosamente</response>
+            <response code="404">Pago no encontrado</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.PaymentController.DeletePaymentDtoMapper(System.Int32)">
+            <summary>
+            Elimina un pago del sistema.
+            </summary>
+            <param name="id">El identificador único del pago a eliminar.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que indica el resultado de la operación.</returns>
+            <response code="204">Pago eliminado exitosamente</response>
+            <response code="404">Pago no encontrado</response>
+        </member>
+        <member name="T:EasyTrufi.Api.Controllers.TopupController">
+            <summary>
+            Controlador para gestionar las operaciones relacionadas con las recargas (Topups).
+            </summary>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.TopupController.#ctor(EasyTrufi.Core.Interfaces.ITopupService,AutoMapper.IMapper,EasyTrufi.Infraestructure.Validators.IValidationService)">
+            <summary>
+            Constructor del controlador TopupController.
+            </summary>
+            <param name="topupService">Servicio para gestionar las recargas.</param>
+            <param name="mapper">Instancia de AutoMapper para realizar mapeos entre entidades y DTOs.</param>
+            <param name="validationService">Servicio para realizar validaciones.</param>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.TopupController.GetAllTopupsDtoMapper(EasyTrufi.Core.QueryFilters.TopupQueryFilter)">
+            <summary>
+            Obtiene una lista de recargas con soporte para paginación y filtros.
+            </summary>
+            <param name="filters">Filtros de consulta para las recargas.</param>
+            <returns>Una lista de recargas en formato DTO con información de paginación.</returns>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.TopupController.GetTopupDtoMapperId(System.Int64)">
+            <summary>
+            Obtiene una recarga específica por su identificador.
+            </summary>
+            <param name="id">Identificador único de la recarga.</param>
+            <returns>La recarga correspondiente en formato DTO.</returns>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.TopupController.InsertTopupDtoMapper(EasyTrufi.Infraestructure.DTOs.TopupDTO)">
+            <summary>
+            Inserta una nueva recarga en el sistema.
+            </summary>
+            <param name="topupsDto">DTO con la información de la recarga a insertar.</param>
+            <returns>La recarga insertada.</returns>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.TopupController.UpdateTopupDtoMapper(System.Int64,EasyTrufi.Infraestructure.DTOs.TopupDTO)">
+            <summary>
+            Actualiza la información de una recarga existente.
+            </summary>
+            <param name="id">Identificador único de la recarga a actualizar.</param>
+            <param name="topupsDto">DTO con la nueva información de la recarga.</param>
+            <returns>La recarga actualizada.</returns>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.TopupController.DeleteTopupDtoMapper(System.Int64)">
+            <summary>
+            Elimina una recarga del sistema.
+            </summary>
+            <param name="id">Identificador único de la recarga a eliminar.</param>
+            <returns>Respuesta sin contenido si la operación es exitosa.</returns>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.UsersController.GetUsersDtoMapper(EasyTrufi.Core.QueryFilters.UserQueryFilter)">
+            <summary>
+            Recupera una lista paginada de usuarios como objetos de transferencia de datos (DTO) según los filtros especificados.
+            </summary>
+            <remarks>Este método utiliza un mapeador para convertir las publicaciones recuperadas en DTO, que luego se 
+            devuelven junto con la información de paginación. Si se produce un error durante el proceso, se devuelve un 
+            código de estado 500 con los detalles del error.<see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/></remarks>
+            <param name="filters">Los filtros que se aplicarán al recuperar publicaciones, como la paginación y los criterios de búsqueda.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que contiene un <see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/> con una colección de objetos <see cref="T:EasyTrufi.Infraestructure.DTOs.UserDTO_GetAll"/> 
+            y detalles de paginación.</returns>
+            <response code="200">Retorna la lista de usuarios en formato DTO</response>
+            <response code="500">Error interno del servidor</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.UsersController.GetUsersDtoMapperId(System.Int32)">
+            <summary>
+            Recupera un usuario específico por su identificador único.
+            </summary>
+            <param name="id">El identificador único del usuario.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que contiene un <see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/> con los datos del usuario.</returns>
+            <response code="200">Retorna el usuario solicitado</response>
+            <response code="404">Usuario no encontrado</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.UsersController.InsertUserDtoMapper(EasyTrufi.Infraestructure.DTOs.UserDTO)">
+            <summary>
+            Inserta un nuevo usuario en el sistema.
+            </summary>
+            <param name="userDTO">El objeto DTO que contiene los datos del usuario a insertar.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que contiene un <see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/> con los datos del usuario creado.</returns>
+            <response code="200">Usuario creado exitosamente</response>
+            <response code="400">Datos inválidos para la creación del usuario</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.UsersController.UpdateUserDtoMapper(System.Int32,EasyTrufi.Infraestructure.DTOs.UserDTO)">
+            <summary>
+            Actualiza los datos de un usuario existente.
+            </summary>
+            <param name="id">El identificador único del usuario a actualizar.</param>
+            <param name="userDTO">El objeto DTO que contiene los nuevos datos del usuario.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que contiene un <see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/> con los datos del usuario actualizado.</returns>
+            <response code="200">Usuario actualizado exitosamente</response>
+            <response code="404">Usuario no encontrado</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.UsersController.DeleteUserDtoMapper(System.Int32)">
+            <summary>
+            Elimina un usuario del sistema.
+            </summary>
+            <param name="id">El identificador único del usuario a eliminar.</param>
+            <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que indica el resultado de la operación.</returns>
+            <response code="204">Usuario eliminado exitosamente</response>
+            <response code="404">Usuario no encontrado</response>
+        </member>
+        <member name="T:EasyTrufi.Api.Controllers.ValidatorController">
+            <summary>
+            Controlador para gestionar las operaciones relacionadas con los validadores.
+            </summary>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.ValidatorController.#ctor(EasyTrufi.Core.Interfaces.IValidatorService,AutoMapper.IMapper,EasyTrufi.Infraestructure.Validators.IValidationService)">
+            <summary>
+            Constructor del controlador ValidatorController.
+            </summary>
+            <param name="validatorService">Servicio para gestionar validadores.</param>
+            <param name="mapper">Instancia de AutoMapper para realizar mapeos entre entidades y DTOs.</param>
+            <param name="validationService">Servicio para realizar validaciones.</param>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.ValidatorController.GetAllValidatorsDtoMapper(EasyTrufi.Core.QueryFilters.ValidatorsQueryFilters)">
+            <summary>
+            Obtiene una lista de validadores con soporte para paginación y filtros.
+            </summary>
+            <param name="filters">Filtros de consulta para los validadores.</param>
+            <returns>Una lista de validadores en formato DTO con información de paginación.</returns>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.ValidatorController.GetValidatorsDtoMapperId(System.Int64)">
+            <summary>
+            Obtiene un validador específico por su identificador.
+            </summary>
+            <param name="id">Identificador único del validador.</param>
+            <returns>El validador correspondiente en formato DTO.</returns>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.ValidatorController.InsertValidatorDtoMapper(EasyTrufi.Infraestructure.DTOs.ValidatorDTO)">
+            <summary>
+            Inserta un nuevo validador en el sistema.
+            </summary>
+            <param name="validatorDto">DTO con la información del validador a insertar.</param>
+            <returns>El validador insertado.</returns>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.ValidatorController.UpdateValidatorDtoMapper(System.Int64,EasyTrufi.Infraestructure.DTOs.ValidatorDTO)">
+            <summary>
+            Actualiza la información de un validador existente.
+            </summary>
+            <param name="id">Identificador único del validador a actualizar.</param>
+            <param name="validatorDto">DTO con la nueva información del validador.</param>
+            <returns>El validador actualizado.</returns>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.ValidatorController.DeleteValidatorDtoMapper(System.Int64)">
+            <summary>
+            Elimina un validador del sistema.
+            </summary>
+            <param name="id">Identificador único del validador a eliminar.</param>
+            <returns>Respuesta sin contenido si la operación es exitosa.</returns>
+        </member>
+    </members>
+</doc>

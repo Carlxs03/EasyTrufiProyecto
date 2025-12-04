@@ -15,22 +15,36 @@ namespace EasyTrufi.Infraestructure.Filters
         //private readonly ILogger<GlobalExceptionFilter> _logger;
 
         public void OnException(ExceptionContext context)
-        {
-            var exception = (BussinesException)context.Exception;
-            var validation = new
+        { 
+            if (context.Exception is BussinesException exception)
             {
-                Status = 400,
-                Title = "Bad Request",
-                Detail = exception.Message
-            };
+                var validation = new
+                {
+                    Status = 400,
+                    Title = "Bad Request",
+                    Detail = exception.Message
+                };
 
-            var json = new
+                var json = new
+                {
+                    errors = new[] { validation }
+                };
+
+                context.Result = new BadRequestObjectResult(json);
+                context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            }
+            else
             {
-                errors = new[] { validation }
-            };
-
-            context.Result = new BadRequestObjectResult(json);
-            context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                // handle other exception types, e.g.:
+                var validation = new
+                {
+                    Status = 500,
+                    Title = "Internal Server Error",
+                    Detail = context.Exception.Message
+                };
+                var json = new { errors = new[] { validation } };
+                context.Result = new ObjectResult(json) { StatusCode = 500 };
+            }
             context.ExceptionHandled = true;
         }
     }

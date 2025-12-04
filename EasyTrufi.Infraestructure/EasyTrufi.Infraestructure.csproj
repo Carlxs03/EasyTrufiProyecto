@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Repositories\NfcCardRepository.cs" />
+    <Compile Remove="Data\Driver.cs" />
+    <Compile Remove="Data\NfcCard.cs" />
+    <Compile Remove="Data\Payment.cs" />
+    <Compile Remove="Data\Topup.cs" />
+    <Compile Remove="Data\User.cs" />
+    <Compile Remove="Data\Validator.cs" />
   </ItemGroup>
 
   <ItemGroup>

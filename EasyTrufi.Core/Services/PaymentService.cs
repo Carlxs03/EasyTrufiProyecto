@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace EasyTrufi.Core.Services
 {
-    internal class PaymentService : IPaymentService
+    public class PaymentService : IPaymentService
     {
         //public readonly IBaseRepository<User> _userRepository;
         //public readonly IUserRepository _userRepository;
@@ -39,7 +39,7 @@ namespace EasyTrufi.Core.Services
             //return await _userRepository.GetAllUserAsync();
         }
 
-        public async Task<Payment> GetPaymentByIdAsync(int id)
+        public async Task<Payment> GetPaymentByIdAsync(long id)
         {
             return await _unitOfWork.paymentRepository.GetById(id);
             //return await _userRepository.GetById(id);

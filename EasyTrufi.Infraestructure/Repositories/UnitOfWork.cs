@@ -22,6 +22,9 @@ namespace EasyTrufi.Infraestructure.Repositories
         public readonly IBaseRepository<Topup> _topupRepository;
         public readonly IBaseRepository<Validator> _validatorRepository;
 
+        private readonly ISecurityRepository _securityRepository;
+
+
         public readonly IDapperContext _dapper;
 
         private IDbContextTransaction? _efTransaction;
@@ -51,6 +54,12 @@ namespace EasyTrufi.Infraestructure.Repositories
 
         public IBaseRepository<Validator> validatorRepository => 
             _validatorRepository ?? new BaseRepository<Validator>(_context);
+
+
+
+        public ISecurityRepository SecurityRepository =>
+            _securityRepository ?? new SecurityRepository(_context);
+
 
         public void Dispose()
         {
