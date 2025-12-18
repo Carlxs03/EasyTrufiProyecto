@@ -1,8 +1,7 @@
-﻿using EasyTrufi.Core.Entities;
-using EasyTrufi.Core.Enum;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using EasyTrufi.Core.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace EasyTrufi.Infraestructure.Data;
 
@@ -129,6 +128,9 @@ public partial class DataBaseEasyTrufiContext : DbContext
         {
             entity.ToTable("Security");
 
+            entity.Property(e => e.Login)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
                 .IsUnicode(false);
@@ -137,11 +139,7 @@ public partial class DataBaseEasyTrufiContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.Role)
                 .HasMaxLength(15)
-                .IsUnicode(false)
-                .HasConversion(
-                    x => x.ToString(),
-                    x => (RoleType)Enum.Parse(typeof(RoleType), x));
-
+                .IsUnicode(false);
         });
 
         modelBuilder.Entity<Topup>(entity =>

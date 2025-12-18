@@ -39,7 +39,7 @@ namespace EasyTrufi.Core.Services
             //return await _userRepository.GetAllUserAsync();
         }
 
-        public async Task<User> GetUserByIdAsync(int id)
+        public async Task<User> GetUserByIdAsync(long id)
         {
             return await _unitOfWork.userRepository.GetUserByIdAsync(id);
             //return await _userRepository.GetById(id);
@@ -99,6 +99,26 @@ namespace EasyTrufi.Core.Services
                 };
             }
 
+        }
+
+        public async Task AddTopupAsync(long userId, Topup topup)
+        {
+            // Recuperar usuario con colecciones navegacionales
+            var user = await _unitOfWork.userRepository.GetUserByIdAsync(userId);
+            if (user == null)
+                throw new ArgumentException($"Usuario con id {userId} no encontrado.");
+
+            // Inicializar colección si es necesario
+            user.Topups ??= new List<Topup>();
+
+            // Asociar el topup al usuario (asegurando UserId)
+            topup.UserId = userId;
+            user.Topups.Add(topup);
+
+            // Persistir el cambio. UpdateUserAsync debe estar preparado para persistir la nueva entidad Topup
+            await _unitOfWork.userRepository.UpdateUserAsync(user);
+
+            await _unitOfWork.SaveChangesAsync();
         }
     }
 }

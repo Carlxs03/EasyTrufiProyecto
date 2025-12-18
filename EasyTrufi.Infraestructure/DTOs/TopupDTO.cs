@@ -17,9 +17,9 @@ namespace EasyTrufi.Infraestructure.DTOs
 
         public string Method { get; set; } = null!;
 
-        public string? Reference { get; set; }
+        //public string? Reference { get; set; }
 
-        public string Status { get; set; } = null!;
+        //public string Status { get; set; } = null!;
 
     }
 }

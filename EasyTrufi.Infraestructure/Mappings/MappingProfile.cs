@@ -20,9 +20,15 @@ namespace EasyTrufi.Infraestructure.Mappings
             CreateMap<User, UserDTO_GetAll>();
             CreateMap<UserDTO_GetAll, User>();
 
+            CreateMap<User, UserResponseDTO>();
+            CreateMap<UserResponseDTO, User>();
+
 
             CreateMap<NfcCard, NfcCardDTO>();
             CreateMap<NfcCardDTO, NfcCard>();
+
+            CreateMap<NfcCard, NfcCardBalanceDTO>();
+            CreateMap<NfcCardBalanceDTO, NfcCard>();
 
             CreateMap<Security, SecurityDTO>().ReverseMap();
 
@@ -32,6 +38,11 @@ namespace EasyTrufi.Infraestructure.Mappings
             CreateMap<Topup, TopupDTO>();
             CreateMap<TopupDTO, Topup>();
 
+            CreateMap<Driver, DriverDTO>();
+            CreateMap<DriverDTO, Driver>();
+
+            CreateMap<Payment, PaymentDTO>();
+            CreateMap<PaymentDTO, Payment>();
 
         }
     }

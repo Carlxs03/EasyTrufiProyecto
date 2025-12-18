@@ -17,12 +17,12 @@ namespace EasyTrufi.Infraestructure.DTOs
 
         public bool Active { get; set; }
 
-        public DateTime IssuedAt { get; set; }
+        //public DateTime IssuedAt { get; set; }
 
         //public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
         //public virtual ICollection<Topup> Topups { get; set; } = new List<Topup>();
 
-        public virtual User? User { get; set; }
+        //public virtual User? User { get; set; }
     }
 }

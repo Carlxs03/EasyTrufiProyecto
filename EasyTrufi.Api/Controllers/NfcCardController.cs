@@ -18,16 +18,24 @@ namespace EasyTrufi.Api.Controllers
         private readonly IValidationService _validationService;
         private readonly IMapper _mapper;
         private readonly INfcCardService _NfcCardService;
-
+        private readonly IUserService _userService;
+        private readonly ITopupService _topupService;
+        private readonly IPaymentService _paymentService;
         public NfcCardController(
             INfcCardService nfcCardService,
             IMapper mapper,
-            IValidationService validationService
+            IValidationService validationService,
+            IUserService userService,
+            ITopupService topupService,
+            IPaymentService paymentService
             )
         {
             _NfcCardService = nfcCardService;
             _mapper = mapper;
             _validationService = validationService;
+            _userService = userService;
+            _topupService = topupService;
+            _paymentService = paymentService;
         }
 
         #region Dto Mapper
@@ -46,9 +54,9 @@ namespace EasyTrufi.Api.Controllers
         public async Task<IActionResult> GetCardsDtoMapper()
         {
             var cards = await _NfcCardService.GetAllCardsAsync();
-            var cardsDto = _mapper.Map<IEnumerable<NfcCardDTO>>(cards);
+            var cardsDto = _mapper.Map<IEnumerable<NfcCardBalanceDTO>>(cards);
 
-            var response = new ApiResponse<IEnumerable<NfcCardDTO>>(cardsDto);
+            var response = new ApiResponse<IEnumerable<NfcCardBalanceDTO>>(cardsDto);
 
             return Ok(response);
         }
@@ -91,8 +99,44 @@ namespace EasyTrufi.Api.Controllers
 
         public async Task<IActionResult> InsertNfcCardDtoMapper([FromBody] NfcCardDTO cardDTO)
         {
+            
+            bool cardExists = await _NfcCardService.CardExistsAsync(cardDTO.Uid);
+            if (cardExists)
+            {
+                return BadRequest($"La tarjeta con código '{cardDTO.Uid}' ya está registrada en el sistema.");
+            }
+
             var card = _mapper.Map<NfcCard>(cardDTO);
-            await _NfcCardService.InsertCardAsync(card);
+            
+
+            if (card.UserId != null)
+            {
+                long auxId = card.UserId.Value;
+                var user = await _userService.GetUserByIdAsync(auxId);
+
+
+
+
+                if (user != null)
+                {
+                    bool HasActiveCard = await _NfcCardService.HasActiveCardAsync(user.Id);
+
+                    if(HasActiveCard)
+                    {
+                        return BadRequest("El usuario ya tiene una tarjeta NFC asociada");
+                    }
+
+                    card.User = user;
+                    await _NfcCardService.InsertCardAsync(card);
+                }
+                else
+                {
+                    return NotFound("Usuario no encontrado para asociar la tarjeta NFC");
+                }
+            }
+
+
+
 
             var response = new ApiResponse<NfcCard>(card);
 
@@ -150,6 +194,49 @@ namespace EasyTrufi.Api.Controllers
 
             await _NfcCardService.DeleteCardAsync(id);
             return NoContent();
+        }
+
+
+        /// <summary>
+        /// Comprueba el saldo de una tarjeta NFC sumando sus topups y restando sus pagos.
+        /// </summary>
+        /// <param name="id">Identificador de la tarjeta NFC.</param>
+        /// <returns>Balance en céntimos y en moneda decimal.</returns>
+        [HttpGet("{id}/balance")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ApiResponse<object>))]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> CheckCardBalance(long id)
+        {
+            var card = await _NfcCardService.GetCardByIdAsync(id);
+            if (card == null)
+                return NotFound("Tarjeta NFC no encontrada");
+
+            // Obtener todos los topups y sumar solo los que correspondan a esta tarjeta
+            var allTopups = await _topupService.GetAllTopupsAsync();
+            var totalTopupCents = allTopups
+                .Where(t => t.NfcCardId == id)
+                .Sum(t => t.AmountCents);
+
+            // Obtener todos los payments y sumar solo los que correspondan a esta tarjeta
+            var allPayments = await _paymentService.GetAllPaymentsAsync();
+            var totalPaymentCents = allPayments
+                .Where(p => p.NfcCardId == id)
+                .Sum(p => p.AmountCents);
+
+            var balanceCents = totalTopupCents - totalPaymentCents;
+            var balance = balanceCents / 100m; // convertir a unidades monetarias
+
+            var payload = new
+            {
+                CardId = id,
+                TotalTopupCents = totalTopupCents,
+                TotalPaymentCents = totalPaymentCents,
+                BalanceCents = balanceCents,
+                Balance = balance
+            };
+
+            var response = new ApiResponse<object>(payload);
+            return Ok(response);
         }
 
         #endregion

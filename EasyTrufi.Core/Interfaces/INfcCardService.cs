@@ -18,5 +18,12 @@ namespace EasyTrufi.Core.Interfaces
         Task UpdateCardAsync(NfcCard card);
 
         Task DeleteCardAsync(long id);
+
+        Task<bool> HasActiveCardAsync(long userId);
+
+        Task<bool> CardExistsAsync(string cardUID);
+
+
+        Task AddTopupAsync(long nfcCardId, Topup topup);
     }
 }

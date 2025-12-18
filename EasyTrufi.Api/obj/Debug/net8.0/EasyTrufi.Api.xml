@@ -4,6 +4,55 @@
         <name>EasyTrufi.Api</name>
     </assembly>
     <members>
+        <member name="T:EasyTrufi.Api.Controllers.DriverController">
+            <summary>
+            Controlador para gestionar las operaciones relacionadas con los conductores (Drivers).
+            </summary>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.DriverController.#ctor(EasyTrufi.Core.Interfaces.IDriverService,AutoMapper.IMapper,EasyTrufi.Infraestructure.Validators.IValidationService)">
+            <summary>
+            Constructor del controlador DriverController.
+            </summary>
+            <param name="driverService">Servicio para gestionar los conductores.</param>
+            <param name="mapper">Instancia de AutoMapper para realizar mapeos entre entidades y DTOs.</param>
+            <param name="validationService">Servicio para realizar validaciones.</param>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.DriverController.GetAllDriversDtoMapper(EasyTrufi.Core.QueryFilters.DriverQueryFilter)">
+            <summary>
+            Obtiene una lista de conductores con soporte para paginación y filtros.
+            </summary>
+            <param name="filters">Filtros de consulta para los conductores.</param>
+            <returns>Una lista de conductores en formato DTO con información de paginación.</returns>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.DriverController.GetDriverDtoMapperId(System.Int64)">
+            <summary>
+            Obtiene un conductor específico por su identificador.
+            </summary>
+            <param name="id">Identificador único del conductor.</param>
+            <returns>El conductor correspondiente en formato DTO.</returns>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.DriverController.InsertDriverDtoMapper(EasyTrufi.Infraestructure.DTOs.DriverDTO)">
+            <summary>
+            Inserta un nuevo conductor en el sistema.
+            </summary>
+            <param name="driverDto">DTO con la información del conductor a insertar.</param>
+            <returns>El conductor insertado.</returns>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.DriverController.UpdateDriverDtoMapper(System.Int64,EasyTrufi.Infraestructure.DTOs.DriverDTO)">
+            <summary>
+            Actualiza la información de un conductor existente.
+            </summary>
+            <param name="id">Identificador único del conductor a actualizar.</param>
+            <param name="driverDto">DTO con la nueva información del conductor.</param>
+            <returns>El conductor actualizado.</returns>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.DriverController.DeleteDriverDtoMapper(System.Int64)">
+            <summary>
+            Elimina un conductor del sistema.
+            </summary>
+            <param name="id">Identificador único del conductor a eliminar.</param>
+            <returns>Respuesta sin contenido si la operación es exitosa.</returns>
+        </member>
         <member name="M:EasyTrufi.Api.Controllers.NfcCardController.GetCardsDtoMapper">
             <summary>
             Recupera una lista de todas las tarjetas NFC registradas en el sistema.
@@ -49,6 +98,13 @@
             <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que indica el resultado de la operación.</returns>
             <response code="204">Tarjeta NFC eliminada exitosamente</response>
             <response code="404">Tarjeta NFC no encontrada</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.NfcCardController.CheckCardBalance(System.Int64)">
+            <summary>
+            Comprueba el saldo de una tarjeta NFC sumando sus topups y restando sus pagos.
+            </summary>
+            <param name="id">Identificador de la tarjeta NFC.</param>
+            <returns>Balance en céntimos y en moneda decimal.</returns>
         </member>
         <member name="M:EasyTrufi.Api.Controllers.PaymentController.GetPaymentsDtoMapper(EasyTrufi.Core.QueryFilters.PaymentQueryFilter)">
             <summary>
@@ -101,7 +157,7 @@
             Controlador para gestionar las operaciones relacionadas con las recargas (Topups).
             </summary>
         </member>
-        <member name="M:EasyTrufi.Api.Controllers.TopupController.#ctor(EasyTrufi.Core.Interfaces.ITopupService,AutoMapper.IMapper,EasyTrufi.Infraestructure.Validators.IValidationService)">
+        <member name="M:EasyTrufi.Api.Controllers.TopupController.#ctor(EasyTrufi.Core.Interfaces.ITopupService,AutoMapper.IMapper,EasyTrufi.Infraestructure.Validators.IValidationService,EasyTrufi.Core.Interfaces.IUserService,EasyTrufi.Core.Interfaces.INfcCardService)">
             <summary>
             Constructor del controlador TopupController.
             </summary>
@@ -109,7 +165,7 @@
             <param name="mapper">Instancia de AutoMapper para realizar mapeos entre entidades y DTOs.</param>
             <param name="validationService">Servicio para realizar validaciones.</param>
         </member>
-        <member name="M:EasyTrufi.Api.Controllers.TopupController.GetAllTopupsDtoMapper(EasyTrufi.Core.QueryFilters.TopupQueryFilter)">
+        <member name="M:EasyTrufi.Api.Controllers.TopupController.GetAllTopupsDtoMapper">
             <summary>
             Obtiene una lista de recargas con soporte para paginación y filtros.
             </summary>
@@ -167,7 +223,7 @@
             <response code="200">Retorna el usuario solicitado</response>
             <response code="404">Usuario no encontrado</response>
         </member>
-        <member name="M:EasyTrufi.Api.Controllers.UsersController.InsertUserDtoMapper(EasyTrufi.Infraestructure.DTOs.UserDTO)">
+        <member name="M:EasyTrufi.Api.Controllers.UsersController.RegisterUser(EasyTrufi.Infraestructure.DTOs.UserDTO)">
             <summary>
             Inserta un nuevo usuario en el sistema.
             </summary>
@@ -175,6 +231,16 @@
             <returns>Un <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> que contiene un <see cref="T:EasyTrufi.Api.Responses.ApiResponse`1"/> con los datos del usuario creado.</returns>
             <response code="200">Usuario creado exitosamente</response>
             <response code="400">Datos inválidos para la creación del usuario</response>
+        </member>
+        <member name="M:EasyTrufi.Api.Controllers.UsersController.VerifyEmail(System.Int64)">
+            <summary>
+            Marca el correo del usuario como verificado (EmailVerified = true).
+            </summary>
+            <param name="id">Identificador del usuario a verificar.</param>
+            <returns>Devuelve el usuario actualizado (sin contraseña) o el código de error correspondiente.</returns>
+            <response code="200">Correo verificado y usuario retornado</response>
+            <response code="404">Usuario no encontrado</response>
+            <response code="400">Correo ya verificado</response>
         </member>
         <member name="M:EasyTrufi.Api.Controllers.UsersController.UpdateUserDtoMapper(System.Int32,EasyTrufi.Infraestructure.DTOs.UserDTO)">
             <summary>

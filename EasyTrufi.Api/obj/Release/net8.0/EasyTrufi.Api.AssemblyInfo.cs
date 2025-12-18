@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("cb6504a9-3e8e-48e2-94a9-93ebc5ed1aba")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("EasyTrufi.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5679790d18a8bf46b3d6a590302a51f3906f2fc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c151af9fbdef31f4a57f93bafec8672cd1bd300b")]
 [assembly: System.Reflection.AssemblyProductAttribute("EasyTrufi.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EasyTrufi.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

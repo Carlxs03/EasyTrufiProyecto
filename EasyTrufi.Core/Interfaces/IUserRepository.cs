@@ -11,7 +11,7 @@ namespace EasyTrufi.Core.Interfaces
     public interface IUserRepository
     {
         Task<IEnumerable<User>> GetAllUserAsync();
-        Task<User>GetUserByIdAsync(int id);
+        Task<User>GetUserByIdAsync(long id);
         Task InsertUserAsync(User user);
 
         Task UpdateUserAsync(User user);    

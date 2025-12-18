@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EasyTrufi.Core.Entities;
+using EasyTrufi.Core.Enum;
 using Microsoft.EntityFrameworkCore;
-using EasyTrufi.Core.Entities;
+using System;
+using System.Collections.Generic;
 
 namespace EasyTrufi.Infraestructure.Data;
 
@@ -27,6 +28,8 @@ public partial class EasyTrufiContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     public virtual DbSet<Validator> Validators { get; set; }
+
+    public virtual DbSet<Security> Securities { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -222,6 +225,26 @@ public partial class EasyTrufiContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("vehicle_id");
         });
+
+        modelBuilder.Entity<Security>(entity =>
+        {
+            entity.ToTable("Security");
+
+            entity.Property(e => e.Name)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.Password)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+            entity.Property(e => e.Role)
+                .HasMaxLength(15)
+                .IsUnicode(false)
+                .HasConversion(
+                    x => x.ToString(),
+                    x => (RoleType)Enum.Parse(typeof(RoleType), x));
+
+        });
+
 
         OnModelCreatingPartial(modelBuilder);
     }

@@ -33,7 +33,7 @@ namespace EasyTrufi.Infraestructure.Repositories
         public async Task Add(T entity)
         {
             _entities.Add(entity);
-            //await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         public async Task Update(T entity)

@@ -189,3 +189,9 @@ D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proye
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\EasyTrufi.Api.pdb
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\EasyTrufi.Api.genruntimeconfig.cache
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\ref\EasyTrufi.Api.dll
+D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\bin\Release\net8.0\EasyTrufi.Api.xml
+D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\bin\Release\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\bin\Release\net8.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\bin\Release\net8.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\bin\Release\net8.0\Swashbuckle.AspNetCore.Annotations.dll
+D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\EasyTrufi.Api.xml

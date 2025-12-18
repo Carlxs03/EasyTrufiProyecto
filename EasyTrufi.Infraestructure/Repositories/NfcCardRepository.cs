@@ -52,9 +52,16 @@ namespace EasyTrufi.Infraestructure.Repositories
         }
 
         
+        public async Task<bool> HasActiveCardAsync(long userId)
+        {
+            return await _context.NfcCards
+                .AnyAsync(c => c.UserId == userId);
+        }
 
-
-
-
+        public async Task<bool> CardExistsAsync(string cardUID)
+        {
+            return await _context.NfcCards
+                .AnyAsync(c => c.Uid == cardUID);
+        }
     }
 }

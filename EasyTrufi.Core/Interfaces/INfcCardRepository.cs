@@ -17,5 +17,9 @@ namespace EasyTrufi.Core.Interfaces
 
         Task DeleteCardAsync(long id);
 
+        Task<bool> HasActiveCardAsync(long userId);
+
+        Task <bool> CardExistsAsync(string cardUID);
+
     }
 }

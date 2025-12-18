@@ -33,7 +33,7 @@ namespace EasyTrufi.Infraestructure.Repositories
             return users;
         }
 
-        public async Task<User> GetUserByIdAsync(int id)
+        public async Task<User> GetUserByIdAsync(long id)
         {
             var user = await _context.Users.FirstOrDefaultAsync(
                 x => x.Id == id);

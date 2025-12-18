@@ -10,7 +10,7 @@ namespace EasyTrufi.Infraestructure.Data;
 /// </summary>
 public partial class Security : BaseEntity
 {
-
+    public string Login { get; set; }
     /// <summary>
     /// Contraseña asociada al usuario.
     /// </summary>
@@ -28,5 +28,5 @@ public partial class Security : BaseEntity
     /// </summary>
     [SwaggerSchema("Rol asignado al usuario (e.g., Administrador, Usuario)", Nullable = false)]
     public RoleType? Role { get; set; }
-    public string Login { get; set; }
+
 }

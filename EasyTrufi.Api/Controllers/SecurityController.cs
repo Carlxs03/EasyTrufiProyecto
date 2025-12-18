@@ -32,6 +32,7 @@ namespace EasyTrufi.Api.Controllers
     [HttpPost]
         public async Task<IActionResult> User(SecurityDTO securityDto)
         {
+            /*
             var security = _mapper.Map<Security>(securityDto);
             security.Password = _passwordService.Hash(security.Password);
             await _securityService.RegisterUser(security);
@@ -39,6 +40,32 @@ namespace EasyTrufi.Api.Controllers
             securityDto = _mapper.Map<SecurityDTO>(security);
             var response = new ApiResponse<SecurityDTO>(securityDto);
             return Ok(response);
+            */
+
+            try
+            {
+                var security = _mapper.Map<Security>(securityDto);
+                security.Password = _passwordService.Hash(security.Password);
+
+                // Verificación rápida antes de guardar
+                if (security.Role.ToString().Length > 15)
+                {
+                    return BadRequest("El nombre del ROL es demasiado largo para la base de datos (Máx 15).");
+                }
+
+                await _securityService.RegisterUser(security);
+
+                securityDto = _mapper.Map<SecurityDTO>(security);
+                var response = new ApiResponse<SecurityDTO>(securityDto);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                // Esto nos dará el error real de SQL
+                var innerMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                return StatusCode(500, new { message = innerMessage, detail = ex.ToString() });
+            }
+
         }
     }
 

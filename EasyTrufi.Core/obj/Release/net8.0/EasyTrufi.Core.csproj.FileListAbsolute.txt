@@ -10,3 +10,4 @@ D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proye
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Core\obj\Release\net8.0\refint\EasyTrufi.Core.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Core\obj\Release\net8.0\EasyTrufi.Core.pdb
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Core\obj\Release\net8.0\ref\EasyTrufi.Core.dll
+D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Core\obj\Release\net8.0\EasyTrufi.Core.csproj.AssemblyReference.cache

@@ -5,6 +5,7 @@ using EasyTrufi.Core.Entities;
 using EasyTrufi.Core.Enum;
 using EasyTrufi.Core.Interfaces;
 using EasyTrufi.Core.QueryFilters;
+using EasyTrufi.Core.Services;
 using EasyTrufi.Infraestructure.DTOs;
 using EasyTrufi.Infraestructure.Validators;
 using Microsoft.AspNetCore.Http;
@@ -22,6 +23,8 @@ namespace EasyTrufi.Api.Controllers
         private readonly IValidationService _validationService;
         private readonly IMapper _mapper;
         private readonly ITopupService _topupService;
+        private readonly IUserService _userService;
+        private readonly INfcCardService _nfcCardService;
 
         /// <summary>
         /// Constructor del controlador TopupController.
@@ -32,12 +35,16 @@ namespace EasyTrufi.Api.Controllers
         public TopupController(
             ITopupService topupService,
             IMapper mapper,
-            IValidationService validationService
+            IValidationService validationService,
+            IUserService userService,
+            INfcCardService nfcCardService
             )
         {
             _topupService = topupService;
             _mapper = mapper;
             _validationService = validationService;
+            _userService = userService;
+            _nfcCardService = nfcCardService;
         }
 
         #region Dto Mapper
@@ -49,8 +56,10 @@ namespace EasyTrufi.Api.Controllers
         /// <returns>Una lista de recargas en formato DTO con información de paginación.</returns>
         [HttpGet()]
         public async Task<IActionResult> GetAllTopupsDtoMapper(
-            [FromQuery] TopupQueryFilter filters)
+            //[FromQuery] TopupQueryFilter filters
+            )
         {
+            /*
             try
             {
                 var topups = await _topupService.GetAllTopupsAsync(filters);
@@ -82,6 +91,14 @@ namespace EasyTrufi.Api.Controllers
                 };
                 return StatusCode(500, responseValidator);
             }
+            */
+
+            var topups = await _topupService.GetAllTopupsAsync();
+            var topupsdto = _mapper.Map<IEnumerable<TopupDTO>>(topups);
+
+            var response = new ApiResponse<IEnumerable<TopupDTO>>(topupsdto);
+
+            return Ok(response);
         }
 
         /// <summary>
@@ -108,8 +125,41 @@ namespace EasyTrufi.Api.Controllers
         [HttpPost()]
         public async Task<IActionResult> InsertTopupDtoMapper([FromBody] TopupDTO topupsDto)
         {
+            var nfccard = await _nfcCardService.GetCardByIdAsync(topupsDto.NfcCardId);
+            if (nfccard == null)
+                return NotFound("Tarjeta NFC no encontrada");
+            if (!nfccard.Active)
+                return BadRequest("La tarjeta NFC está inactiva");
+
+            if (topupsDto.UserId != null)
+            {
+                var user = await _userService.GetUserByIdAsync(topupsDto.UserId.Value);
+                if (user == null)
+                    return NotFound("Usuario no encontrado");
+
+                if (!user.EmailVerified)
+                    return BadRequest("El usuario está inactivo, no ha verificado su Email");
+            }
+
+
             var topup = _mapper.Map<Topup>(topupsDto);
+
+            topup.Status = "COMPLETE";
+            topup.Reference = null;
+
             await _topupService.InsertTopupAsync(topup);
+
+            /*
+
+            var topup1 = _mapper.Map<Topup>(topupsDto);
+
+            await _userService.AddTopupAsync(topup1.UserId.Value, topup1);
+
+            var topup2 = _mapper.Map<Topup>(topupsDto);
+
+            await _nfcCardService.AddTopupAsync(topup2.NfcCardId, topup2);
+            */
+            
 
             var response = new ApiResponse<Topup>(topup);
 

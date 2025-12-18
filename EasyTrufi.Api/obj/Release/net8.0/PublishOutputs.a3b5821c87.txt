@@ -12,8 +12,11 @@ D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proye
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Dapper.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\FluentValidation.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\FluentValidation.DependencyInjectionExtensions.dll
+D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.JsonPatch.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Mvc.Versioning.dll
+D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
@@ -48,6 +51,7 @@ D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proye
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.Bson.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Pomelo.EntityFrameworkCore.MySql.dll
+D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Annotations.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -82,4 +86,5 @@ D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proye
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\EasyTrufi.Infraestructure.dll
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\EasyTrufi.Core.pdb
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\EasyTrufi.Infraestructure.pdb
+D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\EasyTrufi.Api.xml
 D:\CARLOS\Universidad Católica Boliviana\2025\Tecnología Web I\EasyTrufi_Proyecto\EasyTrufi\EasyTrufi.Api\obj\Release\net8.0\PubTmp\Out\EasyTrufi.Api.deps.json

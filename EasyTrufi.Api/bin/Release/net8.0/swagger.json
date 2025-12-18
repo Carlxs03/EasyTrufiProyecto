@@ -1,14 +1,49 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "EasyTrufi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-    "version": "1.0"
+    "title": "Backend EasyTrufi API",
+    "description": "Documentación de la API de EasyTrufi - .NET 8",
+    "contact": {
+      "name": "Equipo de Desarrollo UCB",
+      "email": "carlos.camacho.h@ucb.edu.bo"
+    },
+    "version": "v1"
   },
   "paths": {
-    "/api/NfcCard": {
+    "/api/Driver": {
       "get": {
         "tags": [
-          "NfcCard"
+          "Driver"
+        ],
+        "summary": "Obtiene una lista de conductores con soporte para paginación y filtros.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "Cedula",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "FullName",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Active",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "PageSize",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "PageNumber",
+            "type": "integer",
+            "format": "int32"
+          }
         ],
         "responses": {
           "200": {
@@ -18,8 +53,9 @@
       },
       "post": {
         "tags": [
-          "NfcCard"
+          "Driver"
         ],
+        "summary": "Inserta un nuevo conductor en el sistema.",
         "consumes": [
           "application/json-patch+json",
           "application/json",
@@ -30,8 +66,9 @@
           {
             "in": "body",
             "name": "body",
+            "description": "DTO con la información del conductor a insertar.",
             "schema": {
-              "$ref": "#/definitions/NfcCardDTO"
+              "$ref": "#/definitions/DriverDTO"
             }
           }
         ],
@@ -42,18 +79,20 @@
         }
       }
     },
-    "/api/NfcCard/{id}": {
+    "/api/Driver/{id}": {
       "get": {
         "tags": [
-          "NfcCard"
+          "Driver"
         ],
+        "summary": "Obtiene un conductor específico por su identificador.",
         "parameters": [
           {
             "in": "path",
             "name": "id",
+            "description": "Identificador único del conductor.",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           }
         ],
         "responses": {
@@ -64,8 +103,9 @@
       },
       "put": {
         "tags": [
-          "NfcCard"
+          "Driver"
         ],
+        "summary": "Actualiza la información de un conductor existente.",
         "consumes": [
           "application/json-patch+json",
           "application/json",
@@ -76,15 +116,17 @@
           {
             "in": "path",
             "name": "id",
+            "description": "Identificador único del conductor a actualizar.",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           },
           {
             "in": "body",
             "name": "body",
+            "description": "DTO con la nueva información del conductor.",
             "schema": {
-              "$ref": "#/definitions/NfcCardDTO"
+              "$ref": "#/definitions/DriverDTO"
             }
           }
         ],
@@ -96,15 +138,17 @@
       },
       "delete": {
         "tags": [
-          "NfcCard"
+          "Driver"
         ],
+        "summary": "Elimina un conductor del sistema.",
         "parameters": [
           {
             "in": "path",
             "name": "id",
+            "description": "Identificador único del conductor a eliminar.",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           }
         ],
         "responses": {
@@ -114,10 +158,236 @@
         }
       }
     },
+    "/api/NfcCard": {
+      "get": {
+        "tags": [
+          "NfcCard"
+        ],
+        "summary": "Recupera una lista de todas las tarjetas NFC registradas en el sistema.",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna la lista de tarjetas NFC",
+            "schema": {
+              "$ref": "#/definitions/NfcCardDTOIEnumerableApiResponse"
+            }
+          },
+          "500": {
+            "description": "Error interno del servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "NfcCard"
+        ],
+        "summary": "Inserta una nueva tarjeta NFC en el sistema.",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "El objeto DTO que contiene los datos de la tarjeta NFC a insertar.",
+            "schema": {
+              "$ref": "#/definitions/NfcCardDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Tarjeta NFC creada exitosamente",
+            "schema": {
+              "$ref": "#/definitions/NfcCardApiResponse"
+            }
+          },
+          "400": {
+            "description": "Datos inválidos para la creación de la tarjeta NFC",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/NfcCard/{id}": {
+      "get": {
+        "tags": [
+          "NfcCard"
+        ],
+        "summary": "Recupera una tarjeta NFC específica por su identificador único.",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "El identificador único de la tarjeta NFC.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna la tarjeta NFC solicitada",
+            "schema": {
+              "$ref": "#/definitions/NfcCardDTOApiResponse"
+            }
+          },
+          "404": {
+            "description": "Tarjeta NFC no encontrada",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "NfcCard"
+        ],
+        "summary": "Actualiza los datos de una tarjeta NFC existente.",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "El identificador único de la tarjeta NFC a actualizar.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "El objeto DTO que contiene los nuevos datos de la tarjeta NFC.",
+            "schema": {
+              "$ref": "#/definitions/NfcCardDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Tarjeta NFC actualizada exitosamente",
+            "schema": {
+              "$ref": "#/definitions/NfcCardApiResponse"
+            }
+          },
+          "404": {
+            "description": "Tarjeta NFC no encontrada",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "NfcCard"
+        ],
+        "summary": "Elimina una tarjeta NFC del sistema.",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "El identificador único de la tarjeta NFC a eliminar.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Tarjeta NFC eliminada exitosamente"
+          },
+          "404": {
+            "description": "Tarjeta NFC no encontrada",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/NfcCard/{id}/balance": {
+      "get": {
+        "tags": [
+          "NfcCard"
+        ],
+        "summary": "Comprueba el saldo de una tarjeta NFC sumando sus topups y restando sus pagos.",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Identificador de la tarjeta NFC.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ObjectApiResponse"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
     "/api/Payment": {
       "get": {
         "tags": [
           "Payment"
+        ],
+        "summary": "Recupera una lista paginada de pagos realizados en el sistema.",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
         ],
         "parameters": [
           {
@@ -158,13 +428,180 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna la lista de pagos",
+            "schema": {
+              "$ref": "#/definitions/PaymentDTOIEnumerableApiResponse"
+            }
+          },
+          "500": {
+            "description": "Error interno del servidor"
           }
         }
       },
       "post": {
         "tags": [
           "Payment"
+        ],
+        "summary": "Inserta un nuevo pago en el sistema.",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "El objeto DTO que contiene los datos del pago a insertar.",
+            "schema": {
+              "$ref": "#/definitions/PaymentDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Pago creado exitosamente",
+            "schema": {
+              "$ref": "#/definitions/PaymentApiResponse"
+            }
+          },
+          "400": {
+            "description": "Datos inválidos para la creación del pago",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/Payment/{id}": {
+      "get": {
+        "tags": [
+          "Payment"
+        ],
+        "summary": "Recupera un pago específico por su identificador único.",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "El identificador único del pago.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna el pago solicitado",
+            "schema": {
+              "$ref": "#/definitions/PaymentDTOApiResponse"
+            }
+          },
+          "404": {
+            "description": "Pago no encontrado",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Payment"
+        ],
+        "summary": "Actualiza los datos de un pago existente.",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "El identificador único del pago a actualizar.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "El objeto DTO que contiene los nuevos datos del pago.",
+            "schema": {
+              "$ref": "#/definitions/PaymentDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Pago actualizado exitosamente",
+            "schema": {
+              "$ref": "#/definitions/PaymentApiResponse"
+            }
+          },
+          "404": {
+            "description": "Pago no encontrado",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Payment"
+        ],
+        "summary": "Elimina un pago del sistema.",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "El identificador único del pago a eliminar.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Pago eliminado exitosamente"
+          },
+          "404": {
+            "description": "Pago no encontrado",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/Security": {
+      "post": {
+        "tags": [
+          "Security"
         ],
         "consumes": [
           "application/json-patch+json",
@@ -177,7 +614,7 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "$ref": "#/definitions/PaymentDTO"
+              "$ref": "#/definitions/SecurityDTO"
             }
           }
         ],
@@ -188,18 +625,87 @@
         }
       }
     },
-    "/api/Payment/{id}": {
+    "/api/Token": {
+      "post": {
+        "tags": [
+          "Token"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UserLogin"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Topup": {
       "get": {
         "tags": [
-          "Payment"
+          "Topup"
         ],
+        "summary": "Obtiene una lista de recargas con soporte para paginación y filtros.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Topup"
+        ],
+        "summary": "Inserta una nueva recarga en el sistema.",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "DTO con la información de la recarga a insertar.",
+            "schema": {
+              "$ref": "#/definitions/TopupDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Topup/{id}": {
+      "get": {
+        "tags": [
+          "Topup"
+        ],
+        "summary": "Obtiene una recarga específica por su identificador.",
         "parameters": [
           {
             "in": "path",
             "name": "id",
+            "description": "Identificador único de la recarga.",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           }
         ],
         "responses": {
@@ -210,8 +716,9 @@
       },
       "put": {
         "tags": [
-          "Payment"
+          "Topup"
         ],
+        "summary": "Actualiza la información de una recarga existente.",
         "consumes": [
           "application/json-patch+json",
           "application/json",
@@ -222,15 +729,17 @@
           {
             "in": "path",
             "name": "id",
+            "description": "Identificador único de la recarga a actualizar.",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           },
           {
             "in": "body",
             "name": "body",
+            "description": "DTO con la nueva información de la recarga.",
             "schema": {
-              "$ref": "#/definitions/PaymentDTO"
+              "$ref": "#/definitions/TopupDTO"
             }
           }
         ],
@@ -242,15 +751,17 @@
       },
       "delete": {
         "tags": [
-          "Payment"
+          "Topup"
         ],
+        "summary": "Elimina una recarga del sistema.",
         "parameters": [
           {
             "in": "path",
             "name": "id",
+            "description": "Identificador único de la recarga a eliminar.",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           }
         ],
         "responses": {
@@ -264,6 +775,13 @@
       "get": {
         "tags": [
           "Users"
+        ],
+        "summary": "Recupera una lista paginada de usuarios como objetos de transferencia de datos (DTO) según los filtros especificados.",
+        "description": "Este método utiliza un mapeador para convertir las publicaciones recuperadas en DTO, que luego se \r\n            devuelven junto con la información de paginación. Si se produce un error durante el proceso, se devuelve un \r\n            código de estado 500 con los detalles del error.EasyTrufi.Api.Responses.ApiResponse`1",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
         ],
         "parameters": [
           {
@@ -286,7 +804,25 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Retorna la lista de usuarios en formato DTO",
+            "schema": {
+              "$ref": "#/definitions/UserDTOIEnumerableApiResponse"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Error interno del servidor"
           }
         }
       },
@@ -294,6 +830,7 @@
         "tags": [
           "Users"
         ],
+        "summary": "Inserta un nuevo usuario en el sistema.",
         "consumes": [
           "application/json-patch+json",
           "application/json",
@@ -304,8 +841,240 @@
           {
             "in": "body",
             "name": "body",
+            "description": "El objeto DTO que contiene los datos del usuario a insertar.",
             "schema": {
               "$ref": "#/definitions/UserDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuario creado exitosamente"
+          },
+          "400": {
+            "description": "Datos inválidos para la creación del usuario"
+          }
+        }
+      }
+    },
+    "/api/Users/{id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Recupera un usuario específico por su identificador único.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "El identificador único del usuario.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna el usuario solicitado"
+          },
+          "404": {
+            "description": "Usuario no encontrado"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Actualiza los datos de un usuario existente.",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "El identificador único del usuario a actualizar.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "El objeto DTO que contiene los nuevos datos del usuario.",
+            "schema": {
+              "$ref": "#/definitions/UserDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuario actualizado exitosamente"
+          },
+          "404": {
+            "description": "Usuario no encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Elimina un usuario del sistema.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "El identificador único del usuario a eliminar.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "Usuario eliminado exitosamente"
+          },
+          "404": {
+            "description": "Usuario no encontrado"
+          }
+        }
+      }
+    },
+    "/api/Users/{id}/verify-email": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Marca el correo del usuario como verificado (EmailVerified = true).",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Identificador del usuario a verificar.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Correo verificado y usuario retornado",
+            "schema": {
+              "$ref": "#/definitions/UserResponseDTOApiResponse"
+            }
+          },
+          "404": {
+            "description": "Usuario no encontrado",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "400": {
+            "description": "Correo ya verificado",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/v{version}/users": {
+      "get": {
+        "tags": [
+          "UsersV"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "version",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Validator": {
+      "get": {
+        "tags": [
+          "Validator"
+        ],
+        "summary": "Obtiene una lista de validadores con soporte para paginación y filtros.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "ValidatorCode",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "VehicleId",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "LocationDescription",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "Active",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "PageSize",
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "query",
+            "name": "PageNumber",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Validator"
+        ],
+        "summary": "Inserta un nuevo validador en el sistema.",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "DTO con la información del validador a insertar.",
+            "schema": {
+              "$ref": "#/definitions/ValidatorDTO"
             }
           }
         ],
@@ -316,18 +1085,20 @@
         }
       }
     },
-    "/api/Users/{id}": {
+    "/api/Validator/{id}": {
       "get": {
         "tags": [
-          "Users"
+          "Validator"
         ],
+        "summary": "Obtiene un validador específico por su identificador.",
         "parameters": [
           {
             "in": "path",
             "name": "id",
+            "description": "Identificador único del validador.",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           }
         ],
         "responses": {
@@ -338,8 +1109,9 @@
       },
       "put": {
         "tags": [
-          "Users"
+          "Validator"
         ],
+        "summary": "Actualiza la información de un validador existente.",
         "consumes": [
           "application/json-patch+json",
           "application/json",
@@ -350,15 +1122,17 @@
           {
             "in": "path",
             "name": "id",
+            "description": "Identificador único del validador a actualizar.",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           },
           {
             "in": "body",
             "name": "body",
+            "description": "DTO con la nueva información del validador.",
             "schema": {
-              "$ref": "#/definitions/UserDTO"
+              "$ref": "#/definitions/ValidatorDTO"
             }
           }
         ],
@@ -370,15 +1144,17 @@
       },
       "delete": {
         "tags": [
-          "Users"
+          "Validator"
         ],
+        "summary": "Elimina un validador del sistema.",
         "parameters": [
           {
             "in": "path",
             "name": "id",
+            "description": "Identificador único del validador a eliminar.",
             "required": true,
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           }
         ],
         "responses": {
@@ -414,11 +1190,40 @@
     }
   },
   "definitions": {
+    "DriverDTO": {
+      "type": "object",
+      "properties": {
+        "cedula": {
+          "type": "string"
+        },
+        "fullName": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Message": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Tipo del mensaje (e.g., Información, Advertencia, Error)",
+          "type": "string"
+        },
+        "description": {
+          "description": "Descripción detallada del mensaje",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
     "NfcCard": {
       "type": "object",
       "properties": {
         "id": {
-          "format": "int32",
+          "format": "int64",
           "type": "integer"
         },
         "uid": {
@@ -453,6 +1258,24 @@
       },
       "additionalProperties": false
     },
+    "NfcCardApiResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/NfcCard"
+        },
+        "pagination": {
+          "$ref": "#/definitions/Pagination"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
     "NfcCardDTO": {
       "type": "object",
       "properties": {
@@ -465,13 +1288,95 @@
         },
         "active": {
           "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "NfcCardDTOApiResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/NfcCardDTO"
         },
-        "issuedAt": {
-          "format": "date-time",
-          "type": "string"
+        "pagination": {
+          "$ref": "#/definitions/Pagination"
         },
-        "user": {
-          "$ref": "#/definitions/User"
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "NfcCardDTOIEnumerableApiResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NfcCardDTO"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/Pagination"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ObjectApiResponse": {
+      "type": "object",
+      "properties": {
+        "data": { },
+        "pagination": {
+          "$ref": "#/definitions/Pagination"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Pagination": {
+      "type": "object",
+      "properties": {
+        "totalCount": {
+          "format": "int32",
+          "description": "Número total de elementos en la colección",
+          "type": "integer"
+        },
+        "pageSize": {
+          "format": "int32",
+          "description": "Cantidad de elementos por página",
+          "type": "integer"
+        },
+        "currentPage": {
+          "format": "int32",
+          "description": "Número de la página actual",
+          "type": "integer"
+        },
+        "totalPages": {
+          "format": "int32",
+          "description": "Número total de páginas",
+          "type": "integer"
+        },
+        "hasNextPage": {
+          "description": "Indica si existe una página siguiente",
+          "type": "boolean"
+        },
+        "hasPreviousPage": {
+          "description": "Indica si existe una página anterior",
+          "type": "boolean"
         }
       },
       "additionalProperties": false
@@ -480,7 +1385,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "format": "int32",
+          "format": "int64",
           "type": "integer"
         },
         "nfcCardId": {
@@ -514,6 +1419,24 @@
       },
       "additionalProperties": false
     },
+    "PaymentApiResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Payment"
+        },
+        "pagination": {
+          "$ref": "#/definitions/Pagination"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
     "PaymentDTO": {
       "type": "object",
       "properties": {
@@ -535,11 +1458,98 @@
       },
       "additionalProperties": false
     },
+    "PaymentDTOApiResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/PaymentDTO"
+        },
+        "pagination": {
+          "$ref": "#/definitions/Pagination"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "PaymentDTOIEnumerableApiResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PaymentDTO"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/Pagination"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ProblemDetails": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "status": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "instance": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": { }
+    },
+    "RoleType": {
+      "format": "int32",
+      "enum": [
+        0,
+        1
+      ],
+      "type": "integer"
+    },
+    "SecurityDTO": {
+      "type": "object",
+      "properties": {
+        "login": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "$ref": "#/definitions/RoleType"
+        }
+      },
+      "additionalProperties": false
+    },
     "Topup": {
       "type": "object",
       "properties": {
         "id": {
-          "format": "int32",
+          "format": "int64",
           "type": "integer"
         },
         "nfcCardId": {
@@ -580,53 +1590,85 @@
       },
       "additionalProperties": false
     },
+    "TopupDTO": {
+      "type": "object",
+      "properties": {
+        "nfcCardId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "userId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "amountCents": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "method": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
     "User": {
       "type": "object",
       "properties": {
         "id": {
-          "format": "int32",
+          "format": "int64",
           "type": "integer"
         },
         "cedula": {
+          "description": "Número de Cédula de Identidad (C.I.) del usuario",
           "type": "string"
         },
         "fullName": {
+          "description": "Nombre completo del usuario (Nombres y Apellidos)",
           "type": "string"
         },
         "dateOfBirth": {
           "format": "date",
+          "description": "Fecha de nacimiento (usado para validar edad o descuentos)",
           "type": "string"
         },
         "email": {
+          "description": "Dirección de correo electrónico del usuario",
           "type": "string"
         },
         "passwordHash": {
+          "description": "Hash encriptado de la contraseña del usuario",
           "type": "string"
         },
         "emailVerified": {
+          "description": "Indica si el usuario ha verificado su correo electrónico",
           "type": "boolean"
         },
         "createdAt": {
           "format": "date-time",
+          "description": "Fecha de registro del usuario en el sistema",
           "type": "string"
         },
         "updatedAt": {
           "format": "date-time",
+          "description": "Fecha de la última modificación de los datos del usuario",
           "type": "string"
         },
         "nfcCards": {
+          "description": "Lista de tarjetas NFC vinculadas a este usuario",
           "type": "array",
           "items": {
             "$ref": "#/definitions/NfcCard"
           }
         },
         "payments": {
+          "description": "Historial de pagos de pasajes realizados",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Payment"
           }
         },
         "topups": {
+          "description": "Historial de recargas de crédito en la cuenta",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Topup"
@@ -657,38 +1699,139 @@
       },
       "additionalProperties": false
     },
+    "UserDTOIEnumerableApiResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserDTO"
+          }
+        },
+        "pagination": {
+          "$ref": "#/definitions/Pagination"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "UserLogin": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "description": "Nombre de usuario o identificador empleado para el inicio de sesión",
+          "type": "string"
+        },
+        "password": {
+          "description": "Contraseña del usuario",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UserResponseDTO": {
+      "type": "object",
+      "properties": {
+        "cedula": {
+          "type": "string"
+        },
+        "fullName": {
+          "type": "string"
+        },
+        "dateOfBirth": {
+          "format": "date",
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UserResponseDTOApiResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/UserResponseDTO"
+        },
+        "pagination": {
+          "$ref": "#/definitions/Pagination"
+        },
+        "messages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
     "Validator": {
       "type": "object",
       "properties": {
         "id": {
-          "format": "int32",
+          "format": "int64",
           "type": "integer"
         },
         "validatorCode": {
+          "description": "Código único de identificación del dispositivo validador",
           "type": "string"
         },
         "vehicleId": {
+          "description": "Placa o ID del trufi/miniván asociado",
           "type": "string"
         },
         "locationDescription": {
+          "description": "Descripción operativa (Ej: 'Línea 210 - Trufi 45')",
           "type": "string"
         },
         "active": {
+          "description": "Indica si el validador está habilitado para procesar cobros",
           "type": "boolean"
         },
         "createdAt": {
           "format": "date-time",
+          "description": "Fecha de registro e instalación del validador",
           "type": "string"
         },
         "updatedAt": {
           "format": "date-time",
+          "description": "Fecha de última actualización de datos del dispositivo",
           "type": "string"
         },
         "payments": {
+          "description": "Colección de transacciones realizadas en este validador",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Payment"
           }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ValidatorDTO": {
+      "type": "object",
+      "properties": {
+        "validatorCode": {
+          "description": "Código único de identificación del dispositivo validador",
+          "type": "string"
+        },
+        "vehicleId": {
+          "description": "Placa o ID del trufi/miniván asociado",
+          "type": "string"
+        },
+        "locationDescription": {
+          "description": "Descripción operativa (Ej: 'Línea 210 - Trufi 45')",
+          "type": "string"
+        },
+        "active": {
+          "description": "Indica si el validador está habilitado para procesar cobros",
+          "type": "boolean"
         }
       },
       "additionalProperties": false

@@ -13,7 +13,7 @@ namespace EasyTrufi.Core.Interfaces
     {
         Task<IEnumerable<User>>GetAllUsersAsync();
 
-        Task<User> GetUserByIdAsync(int id);
+        Task<User> GetUserByIdAsync(long id);
 
         Task InsertUserAsync (User user);
 
@@ -23,6 +23,7 @@ namespace EasyTrufi.Core.Interfaces
 
         Task<ResponseData> GetAllUsersAsync(UserQueryFilter filters);
 
+        Task AddTopupAsync(long userId, Topup topup);
 
     }
 }

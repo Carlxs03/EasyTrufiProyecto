@@ -61,7 +61,8 @@ namespace EasyTrufi.Api
             builder.Services.AddTransient<IPaymentService, PaymentService>();
             builder.Services.AddTransient<IValidatorService, ValidatorService>();
             builder.Services.AddTransient<ITopupService, TopupService>();
-            //builder.Services.AddTransient<INfcCardRepository, NfcCardRepository>();
+            builder.Services.AddTransient<IDriverService, DriverService>();
+            builder.Services.AddTransient<INfcCardRepository, NfcCardRepository>();
 
 
             //builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -195,22 +196,24 @@ namespace EasyTrufi.Api
             var app = builder.Build();
 
             // Usar Swagger
+            /*
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
 
-                /*
+                
                 app.UseSwaggerUI(options =>
                 {
                     options.SwaggerEndpoint("/swagger/v1/swagger.json", "Backend Social Media API v1");
                     options.RoutePrefix = string.Empty; // Swagger será accesible en la raíz
                 });
-                */
+                
+            */
+            //}
 
-            }
-
-
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             //if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); }
             app.UseHttpsRedirection();

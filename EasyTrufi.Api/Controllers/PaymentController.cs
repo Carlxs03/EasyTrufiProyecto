@@ -5,6 +5,7 @@ using EasyTrufi.Core.Entities;
 using EasyTrufi.Core.Enum;
 using EasyTrufi.Core.Interfaces;
 using EasyTrufi.Core.QueryFilters;
+using EasyTrufi.Core.Services;
 using EasyTrufi.Infraestructure.DTOs;
 using EasyTrufi.Infraestructure.Validators;
 using Microsoft.AspNetCore.Http;
@@ -20,16 +21,22 @@ namespace EasyTrufi.Api.Controllers
         private readonly IValidationService _validationService;
         private readonly IMapper _mapper;
         private readonly IPaymentService _paymentService;
+        private readonly INfcCardRepository _nfcCardService;
+        private readonly ITopupService _topupService;
 
         public PaymentController(
             IPaymentService paymentService,
             IMapper mapper,
-            IValidationService validationService
+            IValidationService validationService,
+            INfcCardRepository nfcCardService,
+            ITopupService topupService
             )
         {
             _paymentService = paymentService;
             _mapper = mapper;
             _validationService = validationService;
+            _nfcCardService = nfcCardService;
+            _topupService = topupService;
         }
 
         #region Dto Mapper
@@ -116,6 +123,31 @@ namespace EasyTrufi.Api.Controllers
 
         public async Task<IActionResult> InsertPaymentDtoMapper([FromBody] PaymentDTO paymentDTO)
         {
+            // Verificar que la tarjeta NFC exista y esté activa
+            var nfcCard = await _nfcCardService.GetCardByIdAsync(paymentDTO.NfcCardId);
+            if (nfcCard == null)
+                return BadRequest("La tarjeta NFC no existe.");
+            if (!nfcCard.Active)
+                return BadRequest("La tarjeta NFC no está activa.");
+
+            // Calcular el saldo de la tarjeta
+            var allTopups = await _topupService.GetAllTopupsAsync();
+            var totalTopupCents = allTopups
+                .Where(t => t.NfcCardId == paymentDTO.NfcCardId)
+                .Sum(t => t.AmountCents);
+
+            var allPayments = await _paymentService.GetAllPaymentsAsync();
+            var totalPaymentCents = allPayments
+                .Where(p => p.NfcCardId == paymentDTO.NfcCardId)
+                .Sum(p => p.AmountCents);
+
+            var balanceCents = totalTopupCents - totalPaymentCents;
+
+            // Verificar que el saldo sea suficiente para realizar el pago
+            if (balanceCents < paymentDTO.AmountCents)
+                return BadRequest("Saldo insuficiente para realizar el pago.");
+
+            // Mapear el DTO a la entidad y realizar el pago
             var payment = _mapper.Map<Payment>(paymentDTO);
             await _paymentService.InsertPaymentAsync(payment);
 
